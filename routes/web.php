@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AgeController;
+use App\Http\Middleware\AgeValid;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,17 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Optional parameters
+Route::get('/skills/{product?}', function ($product='skill not found') {
+    return 'Skills '.$product;
+    
+});
+
+// Required parameters and Regex
+
+Route::get('/skills/{id}', function ($id) {
+    return 'Skills '.$id;
+})->where('id','[0-9]');
+
+Route::get('/age/{age}', [AgeController::class, 'index'])->middleware(AgeValid::class);
