@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInite248b2985bfd1431c439e8528115f714
+class ComposerStaticInitf77c6c7e6be68e184b6f3bd830073249
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -178,8 +178,8 @@ class ComposerStaticInite248b2985bfd1431c439e8528115f714
         'phpDocumentor\\Reflection\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
-            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
-            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
         ),
         'Whoops\\' => 
         array (
@@ -335,8 +335,8 @@ class ComposerStaticInite248b2985bfd1431c439e8528115f714
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -507,9 +507,11 @@ class ComposerStaticInite248b2985bfd1431c439e8528115f714
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AgeController' => __DIR__ . '/../..' . '/app/Http/Controllers/AgeController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\SkillController' => __DIR__ . '/../..' . '/app/Http/Controllers/SkillController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\AgeValid' => __DIR__ . '/../..' . '/app/Http/Middleware/AgeValid.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',
@@ -5696,10 +5698,10 @@ class ComposerStaticInite248b2985bfd1431c439e8528115f714
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInite248b2985bfd1431c439e8528115f714::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInite248b2985bfd1431c439e8528115f714::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInite248b2985bfd1431c439e8528115f714::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInite248b2985bfd1431c439e8528115f714::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitf77c6c7e6be68e184b6f3bd830073249::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitf77c6c7e6be68e184b6f3bd830073249::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitf77c6c7e6be68e184b6f3bd830073249::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitf77c6c7e6be68e184b6f3bd830073249::$classMap;
 
         }, null, ClassLoader::class);
     }
