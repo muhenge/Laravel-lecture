@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Optional parameters
+Route::get('/skills/{product?}', function ($product='skill not found') {
+    return 'Skills '.$product;
+});
+
+// Required parameters and Regex
+
+Route::get('/skills/{id}', function ($id) {
+    return 'Skills '.$id;
+})->where('id','[0-9]');
+
