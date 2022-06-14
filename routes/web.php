@@ -21,7 +21,6 @@ Route::get('/', function () {
 //Optional parameters
 Route::get('/skills/{product?}', function ($product='skill not found') {
     return 'Skills '.$product;
-    
 });
 
 // Required parameters and Regex
