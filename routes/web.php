@@ -22,4 +22,4 @@ Route::get('/welcome', function () {
 
 // Route::get('/',[HomeController::class, 'index'])->name('home');
 
-Route::get('/age/{age}',[AgeController::class, 'index'])->middleware(AgeMiddleware::class);
+Route::get('/age/{age}',[AgeController::class, 'index'])->middleware('age');
