@@ -29,4 +29,4 @@ Route::get('/skills/{id}', function ($id) {
     return 'Skills '.$id;
 })->where('id','[0-9]');
 
-Route::get('/age/{age}', [AgeController::class, 'index'])->middleware(AgeValid::class);
+Route::get('/age/{age}', [AgeController::class, 'index'])->middleware('age');
