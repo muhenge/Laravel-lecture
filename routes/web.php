@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AgeController;
+use App\Http\Middleware\AgeMiddleware;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,4 +20,6 @@ Route::get('/welcome', function () {
     return view('welcome');
 });
 
-Route::get('/',[HomeController::class, 'index'])->name('home');
+// Route::get('/',[HomeController::class, 'index'])->name('home');
+
+Route::get('/age/{age}',[AgeController::class, 'index'])->middleware(AgeMiddleware::class);
