@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AgeController;
+use App\Http\Middleware\agevalid;
+use App\Http\Controllers\PageController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('hello word');
+    return'this my page';
 });
+Route::get('/about/{age}',[AgeController::class,"Index"])->middleware(agevalid::class);
+Route::resource('page', PageController::class);
+Route::Resource('hello', PageController::class);
+
+
+
