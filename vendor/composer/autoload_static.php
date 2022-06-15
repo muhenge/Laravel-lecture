@@ -507,9 +507,11 @@ class ComposerStaticInite248b2985bfd1431c439e8528115f714
     public static $classMap = array (
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AgeController' => __DIR__ . '/../..' . '/app/Http/Controllers/AgeController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\SkillController' => __DIR__ . '/../..' . '/app/Http/Controllers/SkillController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
+        'App\\Http\\Middleware\\AgeValid' => __DIR__ . '/../..' . '/app/Http/Middleware/AgeValid.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\PreventRequestsDuringMaintenance' => __DIR__ . '/../..' . '/app/Http/Middleware/PreventRequestsDuringMaintenance.php',

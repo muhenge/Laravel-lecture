@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgeController;
 use App\Http\Middleware\AgeValid;
+use  App\Http\Controllers\invokeController;
+use App\Http\Controllers\studentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,3 +32,11 @@ Route::get('/skills/{id}', function ($id) {
 })->where('id','[0-9]');
 
 Route::get('/age/{age}', [AgeController::class, 'index'])->middleware(AgeValid::class);
+Route::get('/server', invokeController::class);
+Route::resource('student', studentController::class);
+///Customize missing method
+Route::resource('student', studentController::class)
+        ->missing(function (Request $request) {
+            return Redirect::route('about');
+        });
+
