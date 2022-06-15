@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -14,5 +15,35 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return "hello world";
+
 });
+Route::get('/log', function() {
+    return "this is my log form";
+});
+
+Route::get(
+    '/post/{id}/{name}',
+    function ($id, $name) {
+        //return view('welcome');
+        return "my id is:" . " " . $id . " " . "and my name is" . " " .  $name;
+    }
+);
+
+Route::get('student/details/example', array('as' => 'student.details', function () {
+    $url = route('student.details');
+    return "The url is : " . $url;
+}));
+
+Route::get('/',function()  
+{  
+  return view('welcome');  
+})-> middleware('age');  
+Route::Get('user/profile',function()  
+{  
+  return "user profile";  
+}); 
+
+
+
