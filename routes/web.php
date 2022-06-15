@@ -4,6 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgeController;
 use App\Http\Middleware\agevalid;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PostController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,13 +18,12 @@ use App\Http\Controllers\PageController;
 |
 */
 
-Route::get('/', function () {
-    //return view('hello word');
-    return'this my page';
-});
-Route::get('/about/{age}',[AgeController::class,"Index"])->middleware(agevalid::class);
-Route::resource('page', PageController::class);
-Route::Resource('hello', PageController::class);
+Route::get('/',[PageController::class,'index']);
+Route::get('/store',[PageController::class,'store'])->name('store')->middleware('post');
+
+
+
+
 
 
 
