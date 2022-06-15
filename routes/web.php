@@ -5,6 +5,11 @@ use App\Http\Controllers\AgeController;
 use App\Http\Middleware\AgeValid;
 use  App\Http\Controllers\invokeController;
 use App\Http\Controllers\studentController;
+use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\adminController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,4 +44,15 @@ Route::resource('student', studentController::class)
         ->missing(function (Request $request) {
             return Redirect::route('about');
         });
+///partial resource Controller
+        Route::resource('photos', PhotoController::class)->only([
+            'index', 'show'
+        ]);
+         
+        Route::resource('photos', PhotoController::class)->except([
+            'create', 'store', 'update', 'destroy'
+        ]);
+        ////APi controllers
+        Route::get('index',[adminController::class,'index'])->name('index');
+        Route::post('create',[adminController::class,'insert'])->name('create');
 
