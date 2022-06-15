@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgeController;
 use App\Http\Middleware\AgeValid;
 use App\Http\Controllers\NameController;
+use App\Http\Controllers\FormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +16,7 @@ use App\Http\Controllers\NameController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/myname', function () {
     return view('welcome');
 });
 
@@ -30,6 +31,20 @@ Route::get('/skills/{id}', function ($id) {
     return 'Skills '.$id;
 })->where('id','[0-9]');
 
-Route::get('/age/{age}', [AgeController::class, 'index'])->middleware(AgeValid::class);
+//Route::get('/age/{age}', [AgeController::class, 'index'])->middleware(AgeValid::class);
 
-Route::resource('/name/{name}',NameController::class);
+//Route::resource('/name/{name}',NameController::class);
+
+//routing controller form data
+Route::get('/mydata',function(){
+    return view('form');
+});
+Route::get('/displaydata',[FormController::class,'Formfn'])->name('data');
+
+
+
+
+
+
+
+
