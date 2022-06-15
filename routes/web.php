@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgeController;
+use App\Http\Controllers\BasicController;
+use App\Http\Controllers\SingleActionController;
+use App\Http\Controllers\ControllerMiddleware;
+use App\Http\Controllers\ResourceController;
 use App\Http\Middleware\AgeValid;
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +33,11 @@ Route::get('/skills/{id}', function ($id) {
     return 'Skills '.$id;
 })->where('id','[0-9]');
 
-Route::get('/age/{age}', [AgeController::class, 'index'])->middleware(AgeValid::class);
+Route::get('/age/{age}', [AgeController::class, 'index'])->middleware("age");
+
+//Controllers Assignment
+
+Route::get('/basic', [BasicController::class, 'index'])->name("basicController");
+Route::get('/single', SingleActionController::class)->name("singleController");
+Route::get('/controMiddle/{age?}', [ControllerMiddleware::class,'index'])->name("controllermiddleware")->middleware("age");
+Route::resource('resource',ResourceController::class)->parameters(['resource' =>'sano']);

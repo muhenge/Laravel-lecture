@@ -17,7 +17,7 @@ class AgeValid
     public function handle(Request $request, Closure $next)
     {
         if ($request->age < 18) {
-            return response('Reka da!', 401);
+            return response('You are Unauthorized', 401);
         }
 
         return $next($request);
