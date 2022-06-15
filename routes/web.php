@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgeController;
+use App\Http\Controllers\TypesOfCotrollers;
 use App\Http\Middleware\AgeValid;
 /*
 |--------------------------------------------------------------------------
@@ -14,19 +15,10 @@ use App\Http\Middleware\AgeValid;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::domain('{sub}.example.com')->group(function(){
+//     Route::get('/',[TypesOfCotrollers::class],'index');
+// });
 
-//Optional parameters
-Route::get('/skills/{product?}', function ($product='skill not found') {
-    return 'Skills '.$product;
-});
-
-// Required parameters and Regex
-
-Route::get('/skills/{id}', function ($id) {
-    return 'Skills '.$id;
-})->where('id','[0-9]');
-
-Route::get('/age/{age}', [AgeController::class, 'index'])->middleware('age');
+Route::get('search/member',[TypesOfCotrollers::class,'find'])->name('search');
+Route::post('find/member',[TypesOfCotrollers::class, 'findMember'])->name('find');
+Route::resource('member',TypesOfCotrollers::class)->only(['index','create','store']);
