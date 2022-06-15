@@ -49,3 +49,11 @@ Route::get('/', function () {
 });
 
 Route::post('/view',[RequestController::class,'store'])->name('viewUser');
+
+//subcontroller
+Route::domain('sub.test.example')->group(function (){
+    Route::get('/domain',function ()
+    {
+        return "hello domain";
+    });
+});

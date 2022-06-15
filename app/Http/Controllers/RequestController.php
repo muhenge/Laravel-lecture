@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 class RequestController extends Controller
 {
     function store(Request $req){
-        return response($req->all(), 200);
+        session(['user' => $req->input('user')]);
+
+        return view('result');
     }
 }
