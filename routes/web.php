@@ -5,6 +5,7 @@ use App\Http\Controllers\AgeController;
 use App\Http\Controllers\BasicController;
 use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\ControllerMiddleware;
+use App\Http\Controllers\RequestController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Middleware\AgeValid;
 /*
@@ -18,9 +19,9 @@ use App\Http\Middleware\AgeValid;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 //Optional parameters
 Route::get('/skills/{product?}', function ($product='skill not found') {
@@ -41,3 +42,10 @@ Route::get('/basic', [BasicController::class, 'index'])->name("basicController")
 Route::get('/single', SingleActionController::class)->name("singleController");
 Route::get('/controMiddle/{age?}', [ControllerMiddleware::class,'index'])->name("controllermiddleware")->middleware("age");
 Route::resource('resource',ResourceController::class)->parameters(['resource' =>'sano']);
+
+//Request
+Route::get('/', function () {
+    return view('audace');
+});
+
+Route::post('/view',[RequestController::class,'store'])->name('viewUser');

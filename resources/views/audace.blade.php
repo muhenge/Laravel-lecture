@@ -7,6 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <form action="{{ route('viewUser') }}" method="POST">
+        @csrf
+        User name: <br>
+        <input type="text" name="user" id="">
+        <br>
+        <input type="submit" value="Send">
+    </form>
 </body>
 </html>
