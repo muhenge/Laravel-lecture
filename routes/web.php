@@ -16,10 +16,97 @@ use App\Http\Middleware\AgeMiddleware;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
+// Route::get('/welcome', function () {
+//     return view('welcome');
+// });
 
-// Route::get('/',[HomeController::class, 'index'])->name('home');
 
+
+//Resource controller's named Routek
+Route::get('/',[HomeController::class, 'index'])->name('welcome');
+
+//Basic controller Route with Middleware
 Route::get('/age/{age}',[AgeController::class, 'index'])->middleware('age');
+
+//Resource Route
+Route::resource('/home', HomeController::class);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
