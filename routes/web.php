@@ -55,6 +55,6 @@ Route::resource('student', studentController::class)
         ////APi controllers
         Route::get('index',[adminController::class,'index'])->name('index');
         Route::post('create',[adminController::class,'insert'])->name('create');
-        Route::get('check',[EricTask::class,'index'])->name('check');
+        Route::get('check',[EricTask::class,'index'])->name('');
         Route::post('create',[EricTask::class,'insert'])->name('create');
 
