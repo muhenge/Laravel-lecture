@@ -10,6 +10,6 @@
 <div class="found">
     {{$member}}
 </div>
- <a href="{{route('member.index')}}">List of Members</a>
+ <a href="{{route('member.index')}}">List of Members</a><br/>
  <a href="{{route('member.create')}}">Add Member</a>
 @endsection

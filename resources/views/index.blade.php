@@ -8,7 +8,7 @@
         <li>{{$item}}</li>    
         @endforeach
     </ul>
-    <a href="{{route('member.create')}}">Add Member</a>
+    <a href="{{route('member.create')}}">Add Member</a><br/>
      <a href="{{route('search')}}">Search a Member</a>
 </div>
 @endsection

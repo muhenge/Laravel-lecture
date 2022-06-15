@@ -2,6 +2,7 @@
 namespace App\Repository;
 
 use App\Repository\Interfaces\TeamMemberInterface;
+use App\Models\SessionTbl;
 
 
 class TeamMemberRepository implements TeamMemberInterface{

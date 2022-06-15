@@ -19,6 +19,7 @@ use App\Http\Middleware\AgeValid;
 //     Route::get('/',[TypesOfCotrollers::class],'index');
 // });
 
+
 Route::get('search/member',[TypesOfCotrollers::class,'find'])->name('search');
 Route::post('find/member',[TypesOfCotrollers::class, 'findMember'])->name('find');
 Route::resource('member',TypesOfCotrollers::class)->only(['index','create','store']);

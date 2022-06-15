@@ -36,7 +36,7 @@ class TypesOfCotrollers extends Controller
         $name=$request->input('name');
         $len = count($this->repo->getAllMembers());
         $totalMembers=$this->repo->getAllMembers();
-        $totalMembers[$len+1]=$name;
+        $totalMembers[$len]=$name;
         return view('index',['members'=>$totalMembers]);
     }
 
@@ -44,6 +44,7 @@ class TypesOfCotrollers extends Controller
     {
         return view('findmember',['member'=>$this->member]);
     }
+
  
     public function findMember(Request $request)
     {

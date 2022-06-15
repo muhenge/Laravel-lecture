@@ -6,7 +6,7 @@
         <input type="text" name="name" placeholder="First name"/>
         <button type="submit">Save</button>
     </form>
-     <a href="{{route('member.index')}}">List of Members</a>
+     <a href="{{route('member.index')}}">List of Members</a></br>
      <a href="{{route('search')}}">Search a Member</a>
  </div>   
 @endsection
