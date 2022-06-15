@@ -13,7 +13,7 @@ class BasicTasks extends Controller
      */
     public function index()
     {
-        //
+    echo'hhh';
     }
 
     /**

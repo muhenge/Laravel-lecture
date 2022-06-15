@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgeController;
 use App\Http\Middleware\AgeValid;
 use App\Http\Controllers\BasicTasks;
+use App\Http\Controllers\DataController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +31,9 @@ Route::get('/skills/{product?}', function ($product='skill not found') {
 Route::get('/skills/{id}', function ($id) {
     return 'Skills '.$id;
 })->where('id','[0-9]');
-
 Route::get('/age/{age}', [AgeController::class, 'index'])->middleware(AgeValid::class);
 Route::resource('basic', BasicTasks::class);
+
+Route::get('list',[DataController::class,'formdata']);
+Route::get('result',[DataController::class,'sessionfn'])->name('datainfo');
+Route::post('datainfo',[DataController::class,'datafn']);
