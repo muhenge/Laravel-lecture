@@ -8,7 +8,7 @@ use App\Http\Controllers\studentController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\adminController;
-
+use App\Http\Controllers\EricTask;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,4 +55,6 @@ Route::resource('student', studentController::class)
         ////APi controllers
         Route::get('index',[adminController::class,'index'])->name('index');
         Route::post('create',[adminController::class,'insert'])->name('create');
+        Route::get('check',[EricTask::class,'index'])->name('check');
+        Route::post('create',[EricTask::class,'insert'])->name('create');
 

@@ -13,25 +13,14 @@
 <body>
       <div class="container">
        <div class="row">
-        <div class='col-6'>
-      
-        <form action="{{'create'}}" method='POST'>
-         @csrf
-         <div class="form-group">
-           <label for=""> UserName</label>
-         </div>
-         <div class="form-group">
-          <input type="text" class="form-control" placeholder="User name " name='username'>
-         </div>
-         <div class="form-group">
-          <label for="my-input">password</label>
-          <input type="password" class="form-control" name='password' >
-         </div>
-         .<div class="form-group">
-          
-          <input class="btn btn-danger" type="submit" name="save">
-         </div>
-        </form>
+       <div class='col-6 bg-primary'>
+        <h2 class=''>UserName:{{Session::get('name')}}</h2>
+       </div>
+       <div class='col-6 bg-danger'>
+        <h3> Your password:{{Session::get('password')}}</h3>
+       </div>
+       
+         
        </div>
        </div>
       </div>
