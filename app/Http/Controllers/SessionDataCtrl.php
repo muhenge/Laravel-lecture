@@ -23,7 +23,7 @@ class SessionDataCtrl extends Controller
     public function storeSessiondata(Request $request){
         $validation= Validator::make($request->all(),['name' => 'required', 'email'=> 'required|unique:session_mdls']);
         if($validation->fails()){
-            return redirect()->route('sn_sv')->withErrors($validation);
+            return redirect()->route('sn_sv')->withErrors($validation)->withInput();
         }
         $data=Session::get('req');
         $this->repo->storeFromSession($data);
@@ -34,5 +34,25 @@ class SessionDataCtrl extends Controller
     public function display(){
         $data= $this->repo->getAllMembers();
         return view('display',['data'=>$data]);
+    }
+
+    public function edit($id){
+        $member= $this->repo->findOne($id);
+        return view('edit',['member'=>$member]);
+    }
+    public function update(Request $request,$id){
+        $body=[
+            'name'=>$request->input('name'),
+            'email'=>$request->input('email'),
+        ];
+        $this->repo->update($body,$id);
+        return redirect()->route('display')->with('msg','Updated successfully');
+    }
+
+    public function destroy($id){
+        
+        if($this->repo->destroy($id)){
+            return redirect()->back()->with('msg','Deleted successfully');
+        }
     }
 }

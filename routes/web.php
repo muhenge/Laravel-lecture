@@ -22,9 +22,7 @@ use App\Http\Middleware\AgeValid;
 
 Route::get('/save',[SessionDataCtrl::class, 'saveFromSession'])->name('sn_sv');
 Route::post('/store',[SessionDataCtrl::class, 'storeSessiondata'])->name('sn_str')->middleware('smdw');
-Route::get('/all',[SessionDataCtrl::class, 'display']);
-
-
-Route::get('search/member',[TypesOfCotrollers::class,'find'])->name('search');
-Route::post('find/member',[TypesOfCotrollers::class, 'findMember'])->name('find');
-Route::resource('member',TypesOfCotrollers::class)->only(['index','create','store']);
+Route::get('/all',[SessionDataCtrl::class, 'display'])->name('display');
+Route::get('/edit/{id}', [SessionDataCtrl::class, 'edit'])->name('edit');
+Route::patch('/update/{id}', [SessionDataCtrl::class, 'update'])->name('update');
+Route::delete('/delete/{id}',[SessionDataCtrl::class, 'destroy'])->name('delete');
