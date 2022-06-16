@@ -14,17 +14,39 @@
       <div class="container">
        <div class="row">
        <div class='col-6 bg-primary'>
-        <h2 class=''>UserName:{{Session::get('name')}}</h2>
-       </div>
-       <div class='col-6 bg-danger'>
-        <h3> Your password:{{Session::get('password')}}</h3>
-       </div>
-       
-         
+        <div class='card'>
+          <div class='card-header bg-primary' style='color:#fff'>Sessiion Checkout</div>
+          <div class='card-body'>
+           <form action="{{'checkout'}}" method='POST'>
+            @csrf
+            <div class="form-group">
+              <label for=""> UserName</label>
+            </div>
+            <div class="form-group">
+             <input  type='text' class="form-control"  value="{{Session::get('name')}}" name='name' readonly>
+             
+            </div>
+            <div class="form-group">
+             <label for="my-input">email</label>
+             <input  type='email' class="form-control"  value="{{Session::get('email')}}" name='email' readonly>
+            </div>
+            <div class="form-group">
+              <label for="my-input">password</label>
+              <input  type='text' class="form-control"  value="{{Session::get('password')}}" name='password' readonly>
+              </div>
+              <br>
+            <div class="form-group">
+             
+             <input class="btn btn-primary" type="submit" name="save">
+             <input class="btn btn-dark" type="reset" name="" value="Destroy">
+            </div>
+           </form>
+          </div>
+          </div>
        </div>
        </div>
       </div>
-
+      
 </body>
 
 </html>

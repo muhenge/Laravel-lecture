@@ -9,6 +9,7 @@ use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\adminController;
 use App\Http\Controllers\EricTask;
+use App\Http\Controllers\todoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,4 +58,9 @@ Route::resource('student', studentController::class)
         Route::post('create',[adminController::class,'insert'])->name('create');
         Route::get('check',[EricTask::class,'index'])->name('');
         Route::post('create',[EricTask::class,'insert'])->name('create');
+        Route::get('data',[todoController::class,'index'])->name('data');
+        Route::post('creat',[todoController::class,'create'])->name('creat');
+        Route::get('show',[todoController::class,'show'])->name('show');
+        Route::post('checkout',[EricTask::class,'sessionSub'])->name("checkout");
 
+      
