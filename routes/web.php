@@ -34,6 +34,8 @@ Route::get('/skills/{id}', function ($id) {
 Route::get('/age/{age}', [AgeController::class, 'index'])->middleware(AgeValid::class);
 Route::resource('basic', BasicTasks::class);
 
-Route::get('list',[DataController::class,'formdata']);
-Route::get('result',[DataController::class,'sessionfn'])->name('datainfo');
+Route::get('/list',[DataController::class,'formdata']);
+Route::post('result',[DataController::class,'sessionfn'])->name('datainfo');
 Route::get('datainfo',[DataController::class,'datafn']);
+Route::get('retrived',[DataController::class,'retrivefn'])->name('retrived');
+Route::get('retrivedata1',[DataController::class,'retrivefn'])->name('retriveddata');
