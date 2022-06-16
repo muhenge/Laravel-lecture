@@ -50,7 +50,7 @@
                             </div>
                             <!-- end row -->
                             <div class="row">
-                                <div class="col-xl-8">
+                                <div class="col-xl-12">
                                     <div class="card m-b-30 blog-wid">
                                         <div class="card-body">
                                             <h4 class="mt-0 header-title mb-4 float-right">ToDo List</h4>
@@ -105,7 +105,8 @@
                                                     <div class="post-details p-1">
                                                         <div class="row font-32">
                                                             <div class="col-xl-4 text-warning">TITLE</div>
-                                                            <div class="col-xl-8 text-warning">DESCRIPTION</div>
+                                                            <div class="col-xl-6 text-warning">DESCRIPTION</div>
+                                                            <div class="col-xl-2 text-warning">Action</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -116,7 +117,8 @@
                                                         <div class="post-details p-1">
                                                             <div class="row">
                                                                 <div class="col-xl-4">{{ $row->title }}</div>
-                                                                <div class="col-xl-8">{{ $row->description }}</div>
+                                                                <div class="col-xl-5">{{ $row->description }}</div>
+                                                                <div class="col-xl-2"><a href="{{ route('edit') }}/{{ $row->id }}">Edit</a>&nbsp;&nbsp;<a href="{{ route('delete') }}/{{ $row->id }}">Delete</a></div>
                                                             </div>
                                                         </div>
                                                     </div>

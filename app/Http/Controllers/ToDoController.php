@@ -33,4 +33,34 @@ class ToDoController extends Controller
 
         return redirect(route('home'));
     }
+
+    public function edit($id)
+    {
+        $result = DB::table('to_dos')->orderBy('id','DESC')->where('id', $id)->get();
+        return view('task.edit', compact('result'));
+    }
+    public function delete($id)
+    {
+        DB::table('to_dos')
+                ->where('id', $id)
+                ->delete();
+        return redirect(route('home'));
+    }
+
+    public function update(Request $request)
+    {
+        $this->validate($request,[
+                'title' => 'required|regex:/^[a-zA-Z ]+$/'
+            ]);
+
+        $id = $request->input('id');
+        $title = $request->input('title');
+        $desc = $request->input('desc');
+
+        DB::table('to_dos')
+                ->where('id', $id)
+                ->update(['title' => $title, 'description' => $desc]);
+        
+        return redirect(route('home'));
+    }
 }

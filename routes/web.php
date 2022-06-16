@@ -63,3 +63,6 @@ Route::domain('sub.test.example')->group(function (){
 
 Route::get('/todo',[ToDoController::class,'home'])->name('home');
 Route::post('/register',[ToDoController::class,'create'])->name('addTask');
+Route::get('/form/{id?}',[ToDoController::class,'edit'])->name('edit');
+Route::get('/delete/{id?}',[ToDoController::class,'delete'])->name('delete');
+Route::post('/update',[ToDoController::class,'update'])->name('update');
