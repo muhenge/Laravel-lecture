@@ -66,3 +66,5 @@ Route::post('/register',[ToDoController::class,'create'])->name('addTask');
 Route::get('/form/{id?}',[ToDoController::class,'edit'])->name('edit');
 Route::get('/delete/{id?}',[ToDoController::class,'delete'])->name('delete');
 Route::post('/update',[ToDoController::class,'update'])->name('update');
+
+Route::get('list',[RequestController::class,'view'])->name('list');

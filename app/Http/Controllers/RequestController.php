@@ -23,7 +23,7 @@ class RequestController extends Controller
                 'city' => $data
             ]);
             $req->session()->forget('user');
-            return "City stored in session registerd";
+            return redirect(route('list'));
         }
     }
 
@@ -32,6 +32,6 @@ class RequestController extends Controller
         $city = DB::table('cities')
                     ->select('*')
                     ->get();
-        return view('result',compact('city'));
+        return view('task.display',compact('city'));
     }
 }

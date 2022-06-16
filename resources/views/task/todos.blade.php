@@ -118,7 +118,7 @@
                                                             <div class="row">
                                                                 <div class="col-xl-4">{{ $row->title }}</div>
                                                                 <div class="col-xl-5">{{ $row->description }}</div>
-                                                                <div class="col-xl-2"><a href="{{ route('edit') }}/{{ $row->id }}">Edit</a>&nbsp;&nbsp;<a href="{{ route('delete') }}/{{ $row->id }}">Delete</a></div>
+                                                                <div class="col-xl-2"><a href="{{ route('edit') }}/{{ $row->id }}">Edit</a>&nbsp;&nbsp;<a href="{{ route('delete') }}/{{ $row->id }}" onclick="javascript:return confirm('are you sure?')">Delete</a></div>
                                                             </div>
                                                         </div>
                                                     </div>
