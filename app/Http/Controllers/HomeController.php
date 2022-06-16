@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return("Hello shoobi, It's Tuesday again");
+       return view('challenge.challenge');
     }
 
     /**
@@ -57,7 +57,7 @@ class HomeController extends Controller
      */
     public function edit($id)
     {
-        return("Hello");
+        return view("age");
     }
 
     /**
