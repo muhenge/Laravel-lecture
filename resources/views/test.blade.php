@@ -7,8 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-  @foreach($user as $key=>$value)
-  <li>{{$key}}: {{$value}}</li>
+  @foreach($user as $key)
+  <li>{{$key}}</li>
   @endforeach
 </body>
 </html>

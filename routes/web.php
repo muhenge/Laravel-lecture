@@ -1,10 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AgeController;
-use App\Http\Middleware\agevalid;
-use App\Http\Controllers\PageController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\ItemController;
+
 
 
 /*
@@ -18,8 +16,18 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/',[PageController::class,'index']);
-Route::get('/store',[PageController::class,'store'])->name('store')->middleware('post');
+
+Route::get ('/', function(){
+    return view('additem');
+});
+
+
+Route::get ('/myitem',[ItemController::class,'adddata'])->name('data');
+
+//Route::get('add',[ItemController::class,'additem]);
+
+
+    
 
 
 
