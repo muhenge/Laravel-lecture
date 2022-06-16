@@ -53,5 +53,4 @@ class TypesOfCotrollers extends Controller
      return view('findmember',['member'=>$this->member]);   
     }
 
-
 }

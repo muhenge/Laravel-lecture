@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgeController;
+use App\Http\Controllers\SessionDataCtrl;
 use App\Http\Controllers\TypesOfCotrollers;
 use App\Http\Middleware\AgeValid;
 /*
@@ -18,6 +19,10 @@ use App\Http\Middleware\AgeValid;
 // Route::domain('{sub}.example.com')->group(function(){
 //     Route::get('/',[TypesOfCotrollers::class],'index');
 // });
+
+Route::get('/save',[SessionDataCtrl::class, 'saveFromSession'])->name('sn_sv');
+Route::post('/store',[SessionDataCtrl::class, 'storeSessiondata'])->name('sn_str')->middleware('smdw');
+Route::get('/all',[SessionDataCtrl::class, 'display']);
 
 
 Route::get('search/member',[TypesOfCotrollers::class,'find'])->name('search');
