@@ -7,6 +7,7 @@ use App\Http\Controllers\SingleActionController;
 use App\Http\Controllers\ControllerMiddleware;
 use App\Http\Controllers\RequestController;
 use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\ToDoController;
 use App\Http\Middleware\AgeValid;
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +47,7 @@ Route::resource('resource',ResourceController::class)->parameters(['resource' =>
 //Request
 Route::get('/', function () {
     return view('audace');
-});
+})->name('sano');
 
 Route::post('/view',[RequestController::class,'store'])->name('viewUser');
 
@@ -57,3 +58,8 @@ Route::domain('sub.test.example')->group(function (){
         return "hello domain";
     });
 });
+
+//task todos
+
+Route::get('/todo',[ToDoController::class,'home'])->name('home');
+Route::post('/register',[ToDoController::class,'create'])->name('addTask');
