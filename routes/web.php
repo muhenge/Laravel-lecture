@@ -5,6 +5,8 @@ use App\Http\Controllers\AgeController;
 use App\Http\Middleware\AgeValid;
 use App\Http\Controllers\NameController;
 use App\Http\Controllers\FormController;
+use App\Http\Controllers\CrudController;
+use App\Http\Controllers\AdditemController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,6 +42,23 @@ Route::get('/mydata',function(){
     return view('form');
 });
 Route::get('/displaydata',[FormController::class,'Formfn'])->name('data');
+
+
+//routing crud data
+
+//index routing
+Route::get('/Form',[CrudController::class,'ViewFormfn']);
+
+//outout routing
+Route::get('/cool',[CrudController::class,'register'])->name('mydata');
+
+
+//routing of add
+Route::view('add','crud.additem');
+Route::get('/result',[AdditemController::class,'add'])->name('data');
+
+
+
 
 
 
