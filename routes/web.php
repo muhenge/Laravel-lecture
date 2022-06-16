@@ -36,4 +36,4 @@ Route::resource('basic', BasicTasks::class);
 
 Route::get('list',[DataController::class,'formdata']);
 Route::get('result',[DataController::class,'sessionfn'])->name('datainfo');
-Route::post('datainfo',[DataController::class,'datafn']);
+Route::get('datainfo',[DataController::class,'datafn']);
