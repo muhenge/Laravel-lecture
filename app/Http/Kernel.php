@@ -65,5 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'age'=>\App\Http\Middleware\AgeValid::class,
         'smdw'=>\App\Http\Middleware\SetSessionMdw::class,
+        'valid'=>\App\Http\Middleware\isDataValidated::class,
     ];
 }

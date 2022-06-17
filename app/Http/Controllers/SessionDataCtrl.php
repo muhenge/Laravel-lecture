@@ -17,7 +17,7 @@ class SessionDataCtrl extends Controller
     }
 
     public function saveFromSession(){
-        return view('create');
+        return view('sessionwork.create');
     }
 
     public function storeSessiondata(Request $request){
@@ -28,17 +28,17 @@ class SessionDataCtrl extends Controller
         $data=Session::get('req');
         $this->repo->storeFromSession($data);
         $all=$this->repo->getAllMembers();
-        return view('display',['data'=>$all]);
+        return view('sessionwork.display',['data'=>$all]);
     }
 
     public function display(){
         $data= $this->repo->getAllMembers();
-        return view('display',['data'=>$data]);
+        return view('sessionwork.display',['data'=>$data]);
     }
 
     public function edit($id){
         $member= $this->repo->findOne($id);
-        return view('edit',['member'=>$member]);
+        return view('sessionwork.edit',['member'=>$member]);
     }
     public function update(Request $request,$id){
         $body=[
