@@ -3,16 +3,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Task</title>
+    <title>District</title>
     <link href="{{ asset('bootstrap.css') }}" rel="stylesheet">
 </head>
 <body><br>
     <div class="card-header">
-        <h3 class="card-title"><h3 style="float:left">Your Task</h3>
-        <a href="{{ route('createTask') }}"><button class="btn btn-primary" style="float:right">New Task</button></a>
+        <h3 class="card-title"><h3 style="float:left">District</h3>
+        <a href="{{ route('challengeForm') }}"><button class="btn btn-primary" style="float:right">New District</button></a>
         </h3>
       </div>
-    <table class="table table-condensed table-hover">
+    <table class="table table-condensed table-hover" style="margin-left: 3rem">
         <thead>
             @if (session('success'))
                <tr>
@@ -25,8 +25,7 @@
                 @endif
             <tr>
             <th >N <sup>o</sup></th>
-            <th>Task</th>
-            <th>Description</th>
+            <th>Name</th>
             <th>Action</th>
             </tr>
         </thead>
@@ -35,20 +34,17 @@
             @php
                 $i = 1;
             @endphp
-            @forelse ($tasks as $task)
+            @forelse ($challenges as $challenge)
             <tr >
             <td>{{ $i++ }}</td>
-            <td>{{ $task->title }}</td>
-            <td>{{ $task->description }}</td>
-            <td>
-                <a href="{{ route('taskEdit', $task->id) }}"><button class="btn btn-info">Update</button></a>
-                <a onclick="return confirm('Are you sure you want to delete?')" href="{{ route('taskDelete', $task->id) }}"><button class="btn btn-danger">Delete</button></a>
+            <td>{{ $challenge->name }}</td>
+            <td><a href="{{ route('challengeEdit',$challenge->id) }}"><button class="btn btn-info">Update</button></a>
+                <a onclick="return confirm('Are you sure you want to delete?')" href="{{ route('challengeDelete', $challenge->id) }}"><button class="btn btn-danger" style="margin-left: 1rem">Delete</button></a>
             </td>
-            
             </tr>
             @empty
             <tr><td colspan="3" >
-                <center><h5 style="color:red; size:24px;">No task found in database.</h5></center>    
+                <center><h5 style="color:red; size:24px;">No district found in database.</h5></center>    
             </td></tr>
      @endforelse
         </tbody>

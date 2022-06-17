@@ -10,13 +10,14 @@
 <body>
     <h1>Task</h1>
     <div class="card-body">
-        <form action="{{ route('taskstore') }}" method="POST">
+        <form action="{{ route('taskUpdate',$task->id) }}" method="POST">
             @csrf
+            @method('put')
 
             <div class="row mb-3">
                 <label for="name" class="col-md-2 col-form-label text-md-end">Task</label>
                 <div class="col-md-6">
-                    <input type="text" value="{{ old('task') }}" class="form-control @error('task') is-invalid @enderror" name="task">                               
+                    <input type="text" value="{{ $task->title }}" class="form-control @error('task') is-invalid @enderror" name="task">                               
                 </div>
                 @error('task')
                     <div class="alert alert-danger">{{ $message }}</div>
@@ -26,17 +27,13 @@
             <div class="row mb-3">
                 <label for="name" class="col-md-2 col-form-label text-md-end">Description</label>
                 <div class="col-md-6">
-                    <textarea name="desc" cols="30" rows="6" class="form-control @error('desc') is-invalid @enderror">{{ old('desc') }}</textarea>
+                    <textarea name="desc" cols="30" rows="6" class="form-control @error('desc') is-invalid @enderror">{{ $task->description }}</textarea>
                 </div>
-                @error('desc')
-                <div class="alert alert-danger">{{ $message }}</div>
-            @enderror
             </div>
 
             <div class="row mb-0">
                 <div class="col-md-6 offset-md-2">
-                    <button type="submit" class="btn btn-success">Register</button>
-                    {{-- <a href="{{ route('task') }}"><button type="submit" class="btn btn-primary" style="margin-left: 2rem">Back</button></a> --}}
+                    <button type="submit" class="btn btn-success">Update</button>
                 </div>
             </div>
         </form>

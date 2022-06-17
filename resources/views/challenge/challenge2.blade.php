@@ -7,10 +7,10 @@
 </head>
 <body>
    
-    <h1>{{ Session::get('kigali') }}</h1><br>
-    <form action="{{ route('challengeStore') }}">
-        <input type="hidden" value="{{ Session::get('key') }}" name="kLab"><br>
-    <input type="submit" name="Submit" value="Store">
-    </form>
+        <h1>{{ Session::get('kigali') }}</h1><br>
+        <form action="{{ route('challengeStore') }}">
+            <input type="hidden" value="{{ Session::get('kigali') }}" name="kLab"><br>
+        <input type="submit" name="Submit" value="Store">
+        </form>
 </body>
 </html>
