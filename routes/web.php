@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AgeController;
 use App\Http\Middleware\AgeValid;
 use App\Http\Controllers\BasicTasks;
+
 use App\Http\Controllers\DataController;
+use App\Http\Controllers\Todotask;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +41,10 @@ Route::post('result',[DataController::class,'sessionfn'])->name('datainfo');
 Route::get('datainfo',[DataController::class,'datafn']);
 Route::get('retrived',[DataController::class,'retrivefn'])->name('retrived');
 Route::get('retrivedata1',[DataController::class,'retrivefn'])->name('retriveddata');
+
+//Task route
+Route::get('/task',[Todotask::class, 'index'])->name('task');
+Route::get('/task/create',[Todotask::class, 'create'])->name('taskCreate');
+Route::post('/task/store',[Todotask::class, 'store'])->name('taskStore');
+Route::get('/task/edit',[Todotask::class, 'edit'])->name('taskEdit');
+Route::get('/task/update',[Todotask::class, 'update'])->name('taskUpdate');

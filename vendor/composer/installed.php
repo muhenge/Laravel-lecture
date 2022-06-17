@@ -3,7 +3,7 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'be1543f064cd31663b672b67e7d8adc44dffbb27',
+        'reference' => '11e0e7d3c516e6f57bb6d3d0c4c6afb68ded8c34',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -376,7 +376,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'be1543f064cd31663b672b67e7d8adc44dffbb27',
+            'reference' => '11e0e7d3c516e6f57bb6d3d0c4c6afb68ded8c34',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -736,8 +736,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0|3.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0|3.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -969,9 +969,9 @@
             'dev_requirement' => true,
         ),
         'spatie/laravel-ignition' => array(
-            'pretty_version' => '1.2.4',
-            'version' => '1.2.4.0',
-            'reference' => 'b90026ba26fe6589101dc5cd6527846290560aea',
+            'pretty_version' => '1.3.0',
+            'version' => '1.3.0.0',
+            'reference' => '5409e699fc19f4d53e59427445b08f90593fda28',
             'type' => 'library',
             'install_path' => __DIR__ . '/../spatie/laravel-ignition',
             'aliases' => array(),

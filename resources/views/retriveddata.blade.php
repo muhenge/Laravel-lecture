@@ -1,11 +1,11 @@
 <html>
     <header>
     </header>
-    <body>
-      <table class="table table-striped">
+    <body style="">
+      <table class="table table-striped" border="1">
         <thead>
           <tr>
-            <th scope="col">#</th>
+          
             <th scope="col">ID</th>
             <th scope="col">First-name</th>
             <th scope="col">Last-name</th>
