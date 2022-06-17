@@ -40,21 +40,21 @@
                                                 @csrf
                                                 <div class="form-group row">
                                                     <div class="col-12">
-                                                        <input class="form-control" name="email" type="email" required="" placeholder="Email">
+                                                        <input class="form-control" name="email" type="email" value="{{ old('email') }}"  required="" placeholder="Email">
                                                         <span style="color:red;">@error('email'){{$message}}@enderror</span>
                                                     </div>
                                                 </div>
                     
                                                 <div class="form-group row">
                                                     <div class="col-12">
-                                                        <input class="form-control" name="name" type="text" required="" placeholder="Username">
+                                                        <input class="form-control" name="name" value="{{ old('name') }}" type="text" required="" placeholder="Username">
                                                         <span style="color:red;">@error('name'){{$message}}@enderror</span>
                                                     </div>
                                                 </div>
                     
                                                 <div class="form-group row">
                                                     <div class="col-12">
-                                                        <input class="form-control" type="password" name="password" required="" placeholder="Password">
+                                                        <input class="form-control" type="password"name="password" required="" placeholder="Password">
                                                         <span style="color:red;">@error('password'){{$message}}@enderror</span>
                                                     </div>
                                                 </div>

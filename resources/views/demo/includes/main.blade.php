@@ -73,9 +73,8 @@
                     <div class="topbar">
 
                         <div class="topbar-left	d-none d-lg-block">
-                            <div class="text-center">
-                                
-                                <a href="index.html" class="logo"><img src="assets/images/logo.png" height="20" alt="logo"></a>
+                            <div class="text-center font-32 text-warning">
+                                Klab
                             </div>
                         </div>
 
