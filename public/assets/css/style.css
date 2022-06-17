@@ -1064,7 +1064,7 @@ body.fixed-left .side-menu.left {
 }
 
 .content-page {
-  /* margin-left: 24px; */
+  margin-left: 240px;
   overflow: hidden;
   min-height: 500px;
 }

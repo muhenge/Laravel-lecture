@@ -27,24 +27,24 @@ class ToDoController extends Controller
         $desc = $request->input('desc');
 
         $data = ToDo::create([
-            'title' => $title,
+            'title' => $title, 
             'description' => $desc
         ]);
 
-        return redirect(route('home'));
+        return redirect(route('todoDashboard'));
     }
 
     public function edit($id)
     {
         $result = DB::table('to_dos')->orderBy('id','DESC')->where('id', $id)->get();
-        return view('task.edit', compact('result'));
+        return view('demo.edit', compact('result'));
     }
     public function delete($id)
     {
         DB::table('to_dos')
                 ->where('id', $id)
                 ->delete();
-        return redirect(route('home'));
+        return redirect(route('todoDashboard'));
     }
 
     public function update(Request $request)
@@ -61,6 +61,6 @@ class ToDoController extends Controller
                 ->where('id', $id)
                 ->update(['title' => $title, 'description' => $desc]);
         
-        return redirect(route('home'));
+        return redirect(route('todoDashboard'));
     }
 }

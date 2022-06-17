@@ -33,5 +33,5 @@ class RequestController extends Controller
                     ->select('*')
                     ->get();
         return view('task.display',compact('city'));
-    }
+    } 
 }
