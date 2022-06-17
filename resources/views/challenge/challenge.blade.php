@@ -1,19 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Challenge</title>
-    <link href="{{ asset('bootstrap.css') }}" rel="stylesheet">
-</head>
-<body>
-    <div style="margin-left: 3rem; margin-right:4rem; margin-top:4rem">
-        <form action="{{ route('challenge') }}">
-            {{-- @csrf --}}
-            <input type="text" class="form-control" placeholder="Enter any name" required name="kacyiru">
-            <input type="submit" class="btn btn-primary" value="Save">
-        </form>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header"><h3>District</h3></div>
+
+                <div class="card-body">
+                    <form action="{{ route('challenge') }}">
+                        {{-- @csrf --}}
+                        <input type="text" class="form-control" placeholder="Enter any name" required name="kacyiru">
+                        <input type="submit" class="btn btn-primary" value="Check">
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</div>
+@endsection

@@ -1,18 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Edit - Challenge</title>
-</head>
-<body>
-    <form method="post" action="{{ route('challengeUpdate', $challenge->id) }}">
-        @csrf
-        @method('put')
-        
-        <input type="text" placeholder="Enter any name" value="{{ $challenge->name }}" name="kacyiru">
-        <input type="submit" value="Update">
-    </form>
-</body>
-</html>
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header"><h3>District</h3></div>
+
+                <div class="card-body">
+                    <form method="post" action="{{ route('challengeUpdate', $challenge->id) }}">
+                        @csrf
+                        @method('put')
+                        
+                        <input type="text" class="form-control" placeholder="Enter any name" value="{{ $challenge->name }}" name="kacyiru">
+                        <input type="submit" class="btn btn-success" value="Update">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

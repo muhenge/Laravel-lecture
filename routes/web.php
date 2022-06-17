@@ -18,7 +18,7 @@ use App\Http\Controllers\TaskController;
 |
 */
 
-Route::get('/welcome', function () {
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -33,8 +33,16 @@ Route::get('/age/{age}',[AgeController::class, 'index'])->middleware('age');
 //Resource Route
 Route::resource('/home', HomeController::class);
 
+//Authentication Routes
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Authonticated Middleware
+Route::middleware(['auth'])->group(function(){
+
 //Chllenge Route
-// Route::get('/',[ChallengeController::class, 'index'])->name('challengeSelect');
+Route::get('/challeng',[ChallengeController::class, 'index'])->name('challengeSelect');
 Route::get('/challenge',[ChallengeController::class, 'create'])->name('challenge');
 Route::get('/form', [ChallengeController::class, 'form'])->name('challengeForm');
 Route::get('/challenge/store', [ChallengeController::class, 'store'])->name('challengeStore');
@@ -57,9 +65,5 @@ Route::get('/edit/{id}',[TaskController::class, 'edit'])->name('taskEdit');
 Route::put('/update/{id}', [Taskcontroller::class, 'update'])->name('taskUpdate');
 Route::get('/delete/{id}', [TaskController::class, 'destroy'])->name('taskDelete');
 
+});
 
-
-//Authentication Routes
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
