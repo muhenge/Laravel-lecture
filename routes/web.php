@@ -9,7 +9,9 @@ use App\Http\Controllers\RequestController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\ToDoController;
 use App\Http\Controllers\DemoController;
+use App\Http\Controllers\AuthController;
 use App\Http\Middleware\AgeValid;
+use App\Http\Middleware\Authenticate;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -73,11 +75,19 @@ Route::domain('sub.test.example')->group(function (){
 
 //Demo route
 
-Route::get('/', [DemoController::class,'index'])->name('dashboard');
-Route::post('/addCity',[DemoController::class,'store'])->name('addSession');
+Route::group(['middleware' =>['auth']],function(){
+    Route::get('/', [DemoController::class,'index'])->name('dashboard');
+    Route::post('/addCity',[DemoController::class,'store'])->name('addSession');
 
-Route::get('/todo', [DemoController::class,'viewTodo'])->name('todoDashboard');
-Route::post('/register',[ToDoController::class,'create'])->name('addTask');
-Route::get('/form/{id?}',[ToDoController::class,'edit'])->name('edit');
-Route::get('/delete/{id?}',[ToDoController::class,'delete'])->name('delete');
-Route::post('/update',[ToDoController::class,'update'])->name('update');
+    Route::get('/todo', [DemoController::class,'viewTodo'])->name('todoDashboard');
+    Route::post('/register',[ToDoController::class,'create'])->name('addTask');
+    Route::get('/form/{id?}',[ToDoController::class,'edit'])->name('edit');
+    Route::get('/delete/{id?}',[ToDoController::class,'delete'])->name('delete');
+    Route::post('/update',[ToDoController::class,'update'])->name('update');
+    Route::get('/logout',[AuthController::class,'logout'])->name('logout');
+});
+
+Route::get('/login',[AuthController::class,'index'])->name('login');
+Route::post('/loginOP',[AuthController::class,'authenticate'])->name('auth');
+Route::get('/registerForm',[AuthController::class,'reg'])->name('newuserForm');
+Route::post('/registerNew',[AuthController::class,'register'])->name('newuser');
